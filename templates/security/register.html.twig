@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block title %}S'incrire{% endblock %}
+{% block description %}inscrit toi{% endblock %}
+{% block bodyClass %}inscription{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .main-footer{
+        position: fixed;
+        bottom: 0;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<!-- MAIN CONTENT -->
+<main role="main">
+    <!-- SECTION 1 -->
+    <section class="container">
+        <div class="content content-inscription">
+            <h1 class="big-title center">S'enregistrer</h1>
+            <form class="form-inscription" name="user" method="post">
+                <div class="field-container">
+                    <label for="user_name" class="required">Nom</label>
+                    <input type="text" id="user_name" name="user[name]" required="required">
+                </div>
+                <div class="field-container">
+                    <label for="user_email" class="required">Email</label>
+                    <input type="email" id="user_email" name="user[email]" required="required">
+                </div>
+                <div class="field-container">
+                    <label for="user_plainPassword_first" class="required">Mot de passe</label>
+                    <input type="password" id="user_plainPassword_first" name="user[plainPassword][first]" required="required">
+                </div>
+                <div class="field-container">
+                    <label for="user_plainPassword_second" class="required">Confirmer le mot de passe</label>
+                    <input type="password" id="user_plainPassword_second" name="user[plainPassword][second]" required="required">
+                </div>
+                <div class="form-button">
+                    <input class="btn" type="submit" id="user_register" name="user[register]">
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Liste d'article de musculation  {% endblock %}
+{% block description %} Retrouvez la sélection Musculation de Gentside Sport  {% endblock %}
+{% block bodyClass %}list-article{% endblock %}
+
+{% block body %}
+         <!-- MAIN CONTENT -->
+  <main role="main">
+    <!-- SECTION 1 -->
+    <section class="container article">
+      <div class="content">
+       <h2 class="big-title"> Liste d'articles </h2>
+       <div class="sort">
+         <p>Trié par :</p>
+         <form action="#">
+           <div class="field-container select-styled">
+             <select name="select" id="select1">
+               <option value="opt1">popularité</option>
+             </select>
+           </div>
+         </form>
+        </div>
+        <div class="cardsContainer">
+        {% for article in articles %}
+          <article class="card">
+            <div class="card__container">
+              <a href="{{ path('article_show', {'id': article.id}) }}"><img src="{{asset("build/img/bg/img2.jpg")}}" alt="" class="card__img"></a>
+              <div class="card__text-container">
+                <a href="{{ path('article_show', {'id': article.id}) }}"><h3 class="card__title"><a href="{{ path('article_show', {'id': article.id}) }}"> {{ article.title }} </a></h3></a>
+                <p class="date">{{ article.createdAt|date }}</p>
+                <p class="card__text">
+                  {{ article.summary }}
+                </p>
+                <div class="right">
+                  <a href="{{ path('article_show', {'id': article.id}) }}" class="btn">lire plus</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+          </div>
+        </div>
+        </section>
+    </main>
+{% endblock %}

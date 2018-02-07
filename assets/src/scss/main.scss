@@ -1,0 +1,56 @@
+/** Import variables & minxins */
+@import "helpers/variables";
+@import "helpers/mixins";
+
+// MEDIAS ORDER (c'est pour que webpack compile bien dans l'ordre)
+@include media('large-desktop')  {.fixWebpackSortMediaQuery{display: none;}} @include media('desktop')        {.fixWebpackSortMediaQuery{display: none;}} @include media('tablet')         {.fixWebpackSortMediaQuery{display: none;}} @include media('only-tablet')    {.fixWebpackSortMediaQuery{display: none;}} @include media('mobile')         {.fixWebpackSortMediaQuery{display: none;}} @include media('landscape')      {.fixWebpackSortMediaQuery{display: none;}} @include media('print')          {.fixWebpackSortMediaQuery{display: none;}}
+
+/** Import les librairies */
+@import "lib/_owlCarousel.scss";
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+@import "~normalize.css";
+
+/** Import Google Font */
+
+
+//Common
+@import "common/global";
+@import "common/typography";
+
+//Helpers
+@import "helpers/classes";
+@import "helpers/extends";
+
+//Components
+@import "components/buttons";
+@import "components/cards";
+@import "components/sort";
+
+//Layouts
+@import "layouts/header";
+@import "layouts/navbar";
+@import "layouts/footer";
+@import "layouts/forms";
+@import "layouts/cardsContainer";
+@import "layouts/article-detail";
+@import "layouts/comment";
+
+//Pages
+.homepage { // <body class="homepage">
+  @import "pages/homepage";
+}
+.article-detail { // <body class="article-detail">
+  @import "pages/article-detail";
+}
+.training-detail { // <body class="training-detail">
+  @import "pages/training-detail";
+}
+  @import "pages/connexion";
+  @import "pages/404";
+  @import "pages/inscription";

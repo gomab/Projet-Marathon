@@ -1,0 +1,68 @@
+input,
+select,
+textarea {
+  width: 100%;
+  background: $grey--l1;
+  outline: none;
+  border: none;
+  padding: 6px;
+}
+label{
+  display: block;
+  text-align: left;
+}
+.field-container {
+  margin-bottom: 20px;
+}
+
+input[type='checkbox'] {
+  width: auto;
+  margin-right: 10px;
+  border: 1px solid $primary;
+}
+input[type='checkbox'] ~ label {
+  display: inline-block;
+}
+
+.field-container.select-styled {
+  position: relative;
+  background: url('#{$pathIMG}/select-arrow.svg') no-repeat right center $grey--l1;
+  select {
+    background: transparent;
+    appearance: none;
+  }
+}
+.form-connexion, .form-inscription{
+  width: 50%;
+  margin: 25px auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 20px;
+  .form_checkbox{
+    display: flex;
+    flex-direction:row;
+  }
+  .form-button{
+    display: flex;
+    flex-direction:row-reverse;
+    a{
+      color: $primary;
+    }
+    input{
+      width: min-content;
+    }
+  }
+}
+
+.form-connexion {
+  .form-button {
+    input {
+      margin: 5px 15px;
+    }
+  }
+}
+
+.form-inscription {
+  input {
+    margin: auto;
+  }
+}

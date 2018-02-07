@@ -1,0 +1,77 @@
+{% extends "base.html.twig" %}
+
+{% block title %}S'incrire{% endblock %}
+{% block description %}inscrit toi{% endblock %}
+{% block bodyClass %}incription{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .main-footer{
+        position: fixed;
+        bottom: 0;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<!-- MAIN CONTENT -->
+<main role="main">
+    <!-- SECTION 1 -->
+    <section class="container">
+        <div class="content content-inscription">
+            <h1 class="big-title center">Créer un entrainement</h1>
+            <form class="form-inscription" name="article" method="post" enctype="multipart/form-data">
+                <div id="article">
+                        <div class="field-container">
+                            <label for="article_title" class="required">Titre de l'entrainement</label>
+                            <input type="text" id="article_title" name="article[title]" required="required">
+                        </div>
+                        <div class="field-container">
+                            <label for="article_summary" class="required">Résumé de l'entrainement</label>
+                            <input type="text" id="article_summary" name="article[summary]" required="required">
+                        </div>
+                        <div class="field-container">
+                            <label for="article_content" class="required">Content de l'entrainement</label>
+                            <textarea id="article_content" name="article[content]" required="required"></textarea>
+                        </div>
+                        <div class="field-container">
+                            <label for="article_media" class="required">Images ou videos de l'entrainement</label>
+                            <input type="file" id="article_media" name="article[media]" required="required">
+                        </div>
+                    <div class="form-button">
+                        <input class="btn"type="submit" id="article_save" name="article[save]">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- <form name="article" method="post" enctype="multipart/form-data">
+    <div id="article">
+        <div>
+            <label for="article_title" class="required">Title</label>
+            <input type="text" id="article_title" name="article[title]" required="required">
+        </div>
+        <div>
+            <label for="article_summary" class="required">Summary</label>
+            <input type="text" id="article_summary" name="article[summary]" required="required">
+        </div>
+        <div>
+            <label for="article_content" class="required">Content</label>
+            <textarea id="article_content" name="article[content]" required="required"></textarea>
+        </div>
+        <div>
+            <label for="article_media" class="required">Media</label>
+            <input type="file" id="article_media" name="article[media]" required="required">
+        </div>
+        <div>
+            <button type="submit" id="article_save" name="article[save]">Create</button>
+        </div>
+    </div>
+</form> 
+-->
+{% endblock %}
+
+
+

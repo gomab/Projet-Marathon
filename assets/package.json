@@ -1,0 +1,45 @@
+{
+  "name": "cours_css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/js/app.js",
+  "scripts": {
+    "build": "webpack --config webpack.dev.js",
+    "prod": "webpack --config webpack.prod.js",
+    "start": "webpack --config webpack.dev.js --watch"
+  },
+  "author": "Vincent Battez",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "css-mqpacker": "^6.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "glob-all": "^3.1.0",
+    "node-sass": "^4.7.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.9",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.1.2",
+    "webpack": "^3.9.1",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0",
+    "owl.carousel": "^2.2.0",
+    "scrollreveal": "^3.3.6"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 9",
+    "ios >= 8"
+  ]
+}

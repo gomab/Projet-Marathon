@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="input/select" transform="translate(-331.000000, 0.000000)">
+            <g id="Group-2">
+                <g id="Group" transform="translate(331.000000, 0.000000)">
+                    <rect id="Rectangle-4" fill="#CE192E" x="0" y="0" width="29" height="30"></rect>
+                    <path d="M11.6763285,20.8862069 C11.5990338,20.962069 11.5024155,21 11.3961353,21 C11.2898551,21 11.1932367,20.962069 11.115942,20.8862069 C10.9613527,20.7344828 10.9613527,20.487931 11.115942,20.3362069 L16.0434783,15.5 L11.115942,10.6637931 C10.9613527,10.512069 10.9613527,10.2655172 11.115942,10.1137931 C11.2705314,9.96206897 11.5217391,9.96206897 11.6763285,10.1137931 L16.884058,15.225 C17.0386473,15.3767241 17.0386473,15.6232759 16.884058,15.775 L11.6763285,20.8862069 L11.6763285,20.8862069 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero" transform="translate(14.000000, 15.500000) rotate(-270.000000) translate(-14.000000, -15.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

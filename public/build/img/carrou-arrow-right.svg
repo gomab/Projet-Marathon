@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="74px" viewBox="0 0 74 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>carrou-arrow-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD---homepage" transform="translate(-1487.000000, -548.000000)">
+            <g id="carrou-arrow-left" transform="translate(1488.000000, 549.000000)">
+                <circle id="Oval" stroke="#CE192E" stroke-width="2" fill-opacity="0.5" fill="#CE192E" fill-rule="evenodd" cx="36" cy="36" r="36"></circle>
+                <path d="M29.8035427,50.6896552 C29.5974235,50.8965517 29.3397746,51 29.0563607,51 C28.7729469,51 28.5152979,50.8965517 28.3091787,50.6896552 C27.8969404,50.2758621 27.8969404,49.6034483 28.3091787,49.1896552 L41.4492754,36 L28.3091787,22.8103448 C27.8969404,22.3965517 27.8969404,21.7241379 28.3091787,21.3103448 C28.7214171,20.8965517 29.3913043,20.8965517 29.8035427,21.3103448 L43.6908213,35.25 C44.1030596,35.6637931 44.1030596,36.3362069 43.6908213,36.75 L29.8035427,50.6896552 L29.8035427,50.6896552 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

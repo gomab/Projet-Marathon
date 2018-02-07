@@ -1,0 +1,14 @@
+.sort{
+  margin-bottom: 40px;
+  p{
+    margin-bottom: 8px;
+  }
+  .field-container{
+    width: 32%;
+  }
+  @include media('mobile') {
+    .field-container{
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.hide {
+  display: none !important;
+  @each $media in $list-medias {
+    @include media($media) {
+      &_#{$media} {
+        display: none !important;
+      }
+    }
+  }
+}
+
+// .hide_large-desktop
+// .hide_desktop
+// .hide_tablet
+// .hide_only-tablet
+// .hide_mobile
+// .hide_landscape
+// .hide_print
+.invisible {
+  opacity: 0;
+  @each $media in $list-medias {
+    @include media($media) {
+      &_#{$media} {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// .invisible_large-desktop
+// .invisible_desktop
+// .invisible_tablet
+// .invisible_only-tablet
+// .invisible_mobile
+// .invisible_landscape
+// .invisible_print
+.full {
+  &.container {
+    max-width: none;
+    >.content {
+      margin-left: -$gap-global;
+    }
+  }
+}
+
+.overlay {
+  transition: opacity 300ms;
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}
+
+@include media('tablet') {
+  .full.container>.content {
+    margin-left: -$gap-global-mobile;
+  }
+}

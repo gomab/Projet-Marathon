@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{% block description %}description!{% endblock %}">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <!-- <link rel="stylesheet" href="/assets/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" /> -->
+        <link rel="stylesheet" href="{{asset('build/css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('build/css/bundle.css')}}">
+        {% block stylesheets %}{% endblock %}
+        <style>
+            .big-title:after{
+                background-image:url('{{asset("build/img/point.svg")}}');
+            }
+            .card .card__title:after{
+                background-image:url('{{asset("build/img/arrow-red.svg")}}');
+            }
+            .field-container.select-styled{
+                background-image:url('{{asset("build/img/select-arrow.svg")}}');
+            }
+        </style>
+    </head>
+    <body class="{% block bodyClass %}{% endblock %}">
+        {% include 'navbar.html.twig' %}
+        {% block body %}{% endblock %}
+
+        {% block javascripts %}
+            <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+            <script>
+                var editor = new MediumEditor('.edit');
+            </script>
+        {% endblock %}
+        {% include 'footer.html.twig' %} 
+
+        <!-- Scripts -->
+        <script src="{{asset('build/js/jquery.min.js')}}"></script>
+        <script src="{{asset('build/js/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('build/js/scrollreveal.min.js')}}"></script>
+        <script src="{{asset('build/js/bundle.js')}}"></script>
+    </body>
+</html>

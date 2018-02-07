@@ -1,0 +1,31 @@
+._404 {
+    background-image: url(#{$pathIMG}/triceps.jpg);
+    height: 100%;
+    background-size: cover;
+    section {
+        height: calc( 100vh - 80px);
+    }
+    .main-footer {
+        z-index: 12;
+        position: fixed;
+        bottom: 0;
+    }
+    .content-404 {
+        z-index: 12;
+        width: 100%;
+        text-align: center;
+        @include center-absolute('xy');
+        h1 {
+            color: #fff;
+        }
+    }
+    .btn {
+        &:hover{
+            background-color: #fff;
+            opacity: 0.8;
+            color: #000;
+            border: 1px solid #000;
+            transition: all 300ms ease-in-out;
+        }
+    }
+}

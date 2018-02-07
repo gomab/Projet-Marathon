@@ -1,0 +1,16 @@
+// code pour la homepage
+.header {
+  background-image: url(http://via.placeholder.com/1920x1080);
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  img {
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+    z-index: 34;
+    @include media('mobile') {
+      display: none;
+    }
+  }
+}

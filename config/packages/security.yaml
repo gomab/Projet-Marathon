@@ -1,0 +1,47 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12
+
+    providers:
+        db_provider:
+            entity:
+                class: App\Entity\User
+        in_memory:
+            memory:
+                users:
+                    ryan:
+                        password: $2a$12$LCY0MefVIEc3TYPHV9SNnuzOfyr2p/AXIGoQJEDs4am4JwhNz/jli
+                        roles: 'ROLE_USER'
+                    admin:
+                        password: $2a$12$cyTWeE9kpq1PjqKFiWUZFuCRPwVyAZwm4XzMZ1qPUFl7/flCM3V0G
+                        roles: 'ROLE_ADMIN'
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            form_login:
+              login_path: login
+              check_path: login
+
+#            provider: in_memory
+            provider: db_provider
+#            remember_me:
+#                key: "%secret%"
+#                lifetime: 2232000
+            logout:
+                path:   /logout
+                target: /
+                invalidate_session: true
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_ADMIN }

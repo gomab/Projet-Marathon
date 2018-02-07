@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="19px" viewBox="0 0 9 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="article" transform="translate(-327.000000, -223.000000)" fill-rule="nonzero" fill="#CE192E">
+            <g id="Group" transform="translate(27.000000, 184.000000)">
+                <g id="Group-2" transform="translate(0.000000, 18.000000)">
+                    <path d="M301.014493,39.8034483 C300.898551,39.9344828 300.753623,40 300.594203,40 C300.434783,40 300.289855,39.9344828 300.173913,39.8034483 C299.942029,39.5413793 299.942029,39.1155172 300.173913,38.8534483 L307.565217,30.5 L300.173913,22.1465517 C299.942029,21.8844828 299.942029,21.4586207 300.173913,21.1965517 C300.405797,20.9344828 300.782609,20.9344828 301.014493,21.1965517 L308.826087,30.025 C309.057971,30.287069 309.057971,30.712931 308.826087,30.975 L301.014493,39.8034483 L301.014493,39.8034483 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

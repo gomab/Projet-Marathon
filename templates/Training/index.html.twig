@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+{% block bodyClass %}list-training{% endblock %}
+
+{% block body %}
+  <div class="list-article">
+       <!-- MAIN CONTENT -->
+  <main role="main">
+  <!-- SECTION 1 -->
+  <section class="container article">
+    <div class="content">
+     <h2 class="big-title"> Liste d'entrainements </h2>
+     <div class="sort">
+       <p>Trié par :</p>
+       <form action="#">
+         <div class="field-container select-styled">
+           <select name="select" id="select1">
+             <option value="opt1">Popularité</option>
+             <option value="opt1">Vote</option>
+             <option value="opt1">Commentaire</option>
+           </select>
+         </div>
+       </form>
+      </div>
+      <div class="cardsContainer">
+        {% for training in trainings %}
+          <article class="card card--training">
+            <div class="card__container">
+              <a href="{{ path('training_show', {'id': training.id}) }}"><img src="{{asset("build/img/bg/img1.jpg")}}" alt="" class="card__img"></a>
+              <div class="card__text-container">
+                <a href="{{ path('training_show', {'id': training.id}) }}">
+                  <h3 class="card__title">
+                    {{ training.name }}
+                  </h3>
+                </a>
+                <div class="card__caracteristiques">
+                  <img class="card__image-muscle" src="{{asset('build/img/muscle-abdo.svg')}}" alt="abdo">
+                  <ul class="list list--nostyle">
+                    <li class="item">Difficulté : 
+                      {% for i in 1..training.difficulty %}
+                        <img src="{{asset('build/img/muscu.svg')}}" alt="difficulté muscle 1">
+                      {% endfor %}
+                    </li>
+                    <li class="item">Muscle : {{training.muscles}}</li>
+                  </ul>
+                </div>
+                <p class="card__text">
+                    {{training.steps}}
+                </p>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+          </div>
+        </div>
+      </section>
+    </main>
+</div>
+
+{% endblock %}

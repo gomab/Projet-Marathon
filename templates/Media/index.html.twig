@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h2> Media Index !</h2>
+
+    <ul>
+        {% for media in medias %}
+
+            <li>
+
+                {{ media.title }}
+
+            </li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}

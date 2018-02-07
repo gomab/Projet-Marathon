@@ -1,0 +1,133 @@
+{% extends "base.html.twig" %}
+
+{% block title %}entrainement{% endblock %}
+{% block description %}{% endblock %}
+{% block bodyClass %}training-detail{% endblock %}
+
+{% block body %}
+<div class="homepage">
+    {% include 'navbar.html.twig' %} 
+    <!-- MAIN CONTENT -->
+  <main role="main">
+    <!-- SECTION 1 -->
+    <section class="container">
+      <div class="content">
+        <div class="article--detail">
+        {% if training is defined %}
+          <div class="article__right">
+              <h2 class="big-title"> Exercice : {{ training.name }} </h2>
+            <ul class="list list--inline date">
+              <li class="item">{{ training.createdAt|date("d/m/Y") }}</li>
+              <li class="item">Difficulté : 
+                
+                  {% for i in 1..training.difficulty %}
+                  <img src="{{asset('build/img/muscu.svg')}}" alt="difficulté muscle 1">
+                {% endfor %}
+              </li>
+              <li class="item">Durée : {{ training.trainingTime|date("h:m") }}</li>
+              <li class="item">Muscle : {{ training.muscles }}</li>
+            </ul>
+            <div class="article__content">
+                <p>
+                    {{ training.steps }} 
+                </p>
+              <img src="{{asset("build/img/bg/img1.jpg")}}" alt="">
+              <h4 class="big-title no-underline"> Votes </h2>
+              {% set exist = false %}
+              {% for vote in votes %}
+                  <ul>
+                      <li> Note : {{ vote.value }} </li>
+                  </ul>
+              {% endfor %}
+
+              {% if is_granted('ROLE_USER') == false %}
+
+              {% elseif (app.user.bloquer == false)%}
+
+                  <h2> Ajouter un commentaire ! </h2>
+                  {{ form(form) }}
+
+                  {% set exist = false %}
+                  {% for vote in votes %}
+                      {% if  vote.user.id == app.user.id %}
+                          {% set exist = true %}
+                      {% endif %}
+                  {% endfor %}
+                  {% if exist == false %}
+                      <h2> Ajouter un vote ! </h2>
+                      {{ form(form2) }}
+                  {% endif %}
+              {% endif %}
+              <ul class="list list--nostyle list--inline note-vote">
+                <li class="item"><img src="{{asset('build/img/stars.svg')}}" alt="stars "></li>
+                <li class="item"><img src="{{asset('build/img/stars.svg')}}" alt="stars "></li>
+                <li class="item"><img src="{{asset('build/img/stars.svg')}}" alt="stars "></li>
+                <li class="item"><img src="{{asset('build/img/stars.svg')}}" alt="stars "></li>
+                <li class="item"><img src="{{asset('build/img/stars-empty.svg')}}" alt="stars empty"></li>
+              </ul>
+              <button class="btn">Ajouter la vidéo dans la playlist</button>
+            </div>
+            <p class="author">Publié par Maxime Lambert, le {{ training.createdAt|date("d/m/Y") }}</p>
+          </div>
+          {% endif %}
+          <div class="article__left">
+            <div class="caract">
+              <h3 class="big-title">Caractéristiques</h3>
+              <div class="card__caracteristiques">
+                <img class="card__image-muscle" src="{{asset('build/img/muscle-abdo.svg')}}" alt="abdo">
+                <ul class="list list--nostyle">
+                    <li class="item">Difficulté : 
+                      
+                        {% for i in 1..training.difficulty %}
+                        <img src="{{asset('build/img/muscu.svg')}}" alt="difficulté muscle 1">
+                      {% endfor %}
+                    </li>
+                    <li class="item">Temps de pause : {{ training.restTime|date("h:m") }} </li>
+                    <li class="item">Durée : {{training.trainingTime|date("h:m")}}</li>
+                    <li class="item">Muscle :  {{ training.muscles }} </li>
+                    <li class="item">Matériels 
+                      <ul class="list list--dot">
+                        <li class="item">{{training.materials}}</li>
+                      </ul>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            <div class="conseil">
+              <h3 class="big-title">Conseil du coatch</h3>
+              <p>{{ training.astuce }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="write-comment">
+          <h4 class="big-title">
+            Commentaires
+          </h4>
+          <form action="#">
+            <div class="field-container">
+                <label for="text">Écrire un commentaire</label>
+                <textarea name="text" id="text"> </textarea>
+                <h2> Ajouter un commentaire ! </h2>
+                {{ form(form) }}
+            </div>
+          </form>
+        </div>
+        <div class="list-comment">
+
+    {% for comment in comments %}
+          <div class="comment">
+            <p>
+              <span class="comment__user">{{ comment.user.name }}</span>
+              <span class="date">{{ comment.createdAt|date("d/m/Y") }}</span>
+            </p>
+            <p class="comment__texte">
+               {{ comment.content }}
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+{% endblock %}

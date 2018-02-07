@@ -1,0 +1,31 @@
+  <!-- NAV -->
+  <nav class="main-nav container" role="navigation">
+    <div class="overlay"></div>
+    <div class="content">
+      <img src="{{asset('build/img/hamburger.svg')}}" alt="menu" class="hamburger js-open-nav">
+      <div class="nav-left">
+            <a href="{{ path('welcome') }}"><img src="{{asset('build/img/logo-solo.svg')}}" alt="logo"></a>
+        <ul class="list list--inline">
+          <li class="item" role="menuitem"><a class="active" href="{{ path('welcome') }}">Accueil</a></li>
+          <li class="item" role="menuitem"><a href="{{ path('training_index') }}">Entraînements</a></li>
+          <li class="item" role="menuitem"><a href="{{ path('article_index') }}">Articles</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <ul class="list list--inline">
+            {% if app.user %}
+                {% if app.user.isAdmin %}
+                    <li class="item" role="menuitem"><a href="{{ path('admin') }}">Admin</a></li>
+                    <li class="item" role="menuitem"><a href="{{ path('article_new') }}">Create Article</a></li>
+                    <li class="item" role="menuitem"><a href="{{ path('training_new') }}">Create Training</a></li>
+                {% endif %}
+                <li class="item" role="menuitem"><a href="{{ path('logout') }}">Logout</a></li>
+            {% else %}
+                <li class="item" role="menuitem"><a href="{{ path('login') }}">Connexion</a></li>
+                <li class="item" role="menuitem"><a href="{{ path('register') }}">S'enregisrer</a></li>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>

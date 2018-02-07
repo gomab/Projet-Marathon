@@ -1,0 +1,118 @@
+{% extends "base.html.twig" %}
+
+{% block title %}S'incrire{% endblock %}
+{% block description %}inscrit toi{% endblock %}
+{% block bodyClass %}incription{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .main-footer{
+        position: fixed;
+        bottom: 0;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<!-- MAIN CONTENT -->
+<main role="main">
+    <!-- SECTION 1 -->
+    <section class="container">
+        <div class="content content-inscription">
+            <h1 class="big-title center">Modifier un article</h1>
+            <form class="form-inscription" name="article" method="post" enctype="multipart/form-data">
+                <div id="article">
+                        <div class="field-container">
+                            <label for="article_title" class="required">Title</label>
+                            <input type="text" id="article_title" name="article[title]" required="required" value="Musculation : nos conseils pour débuter">
+                        </div>
+                        <div class="field-container">
+                            <label for="article_summary" class="required">Summary</label>
+                            <input type="text" id="article_summary" name="article[summary]" required="required" value="Nombreux sont les débutants qui rencontrent des difficultés pour commencer leur programme de musculation, et qui se retrouvent souvent noyés par les nombreuses informations disponibles sur internet dans lesquelles il n’est pas toujours facile de faire le tri.">
+                        </div>
+                        <div class="field-container">
+                            <label for="article_content" class="required">Content</label>
+                            <textarea id="article_content" name="article[content]" required="required">Nombreux sont les débutants qui rencontrent des difficultés pour commencer leur programme de musculation, et
+                                qui se retrouvent souvent noyés par les nombreuses informations disponibles sur internet dans lesquelles
+                                il n’est pas toujours facile de faire le tri. Avant toute chose, sachez que la musculation est un sport qui
+                                prend du temps : si les résultats peuvent rapidement être perçus au début, il faudra continuer les efforts
+                                sur le long terme, le développement musculaire étant assez long. Comptez plusieurs mois avant de réels progrés
+                                ! Attention tout de même, vouloir accélérer les choses et aller trop vite ne développera vos muscles plus
+                                vite, au contraire. Inutile donc de faire des exercices quotidiennement, d’autant plus que vos muscles ont
+                                besoin d’une phase de récupération pour se réparer. Ne pas respecter cette phase peut s’avérer dangereux
+                                et être source de blessure, alors soyez vigilants ! 3 séances par semaine est une bonne moyenne. Toujours
+                                pour éviter les blessures, il est très important, voire même obligatoire, de s’échauffer avant tout exercice
+                                et de s’étirer à la fin de votre programme du jour. L’échauffement est bien trop souvent négligé et ne prend
+                                pourtant que quelques minutes pour être réalisée : une dizaine de minutes de cardio suffisent. Quant aux
+                                étirements, ils vous permettront d’éviter les courbatures le lendemain. Lors de vos première séances, si
+                                vous êtes en salle, prenez le temps de découvrir le bon fonctionnement de toutes les machines à votre disposition.
+                                Des coaches sont toujours disponibles pour répondre à vos questions et vous montrer les bons gestes à adopter
+                                pour bien réaliser vos exercices afin qu’ils soient efficaces. Aussi, ces exercices doivent impérativement
+                                concerner chaque partie de votre corps. C’est très bien de travailler les abdominaux et les biceps mais pensez
+                                aussi au dos et aux jambes qui vous évitera de donner l’impression d’avoir des cure-dents à la place des
+                                jambes. Enfin, si vous pensez déjà aux compléments alimentaires, oubliez tout de suite, ils ne seront d’aucune
+                                utilité sans un régime particulier. Vous pouvez attendre quelques mois avant d’essayer les compléments, seulement
+                                lorsque vous aurez trouvé votre rythme et le programme adapté à vos objectifs. Mais surtout, mangez équilibré
+                                !</textarea>
+                        </div>
+                        <div class="field-container">
+                            <label for="article_media" class="required">Media</label>
+                            <input type="file" id="article_media" name="article[media]" required="required">
+                        </div>
+                    <div class="form-button">
+                        <input class="btn" type="submit" id="article_save" name="article[save]">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- <form name="article" method="post" enctype="multipart/form-data">
+    <div id="article">
+        <div class="field-container">
+            <label for="article_title" class="required">Title</label>
+            <input type="text" id="article_title" name="article[title]" required="required" value="Musculation : nos conseils pour débuter">
+        </div>
+        <div>
+            <label for="article_summary" class="required">Summary</label>
+            <input type="text" id="article_summary" name="article[summary]" required="required" value="Nombreux sont les débutants qui rencontrent des difficultés pour commencer leur programme de musculation, et qui se retrouvent souvent noyés par les nombreuses informations disponibles sur internet dans lesquelles il n’est pas toujours facile de faire le tri.">
+        </div>
+        <div>
+            <label for="article_content" class="required">Content</label>
+            <textarea id="article_content" name="article[content]" required="required">Nombreux sont les débutants qui rencontrent des difficultés pour commencer leur programme de musculation, et
+                qui se retrouvent souvent noyés par les nombreuses informations disponibles sur internet dans lesquelles
+                il n’est pas toujours facile de faire le tri. Avant toute chose, sachez que la musculation est un sport qui
+                prend du temps : si les résultats peuvent rapidement être perçus au début, il faudra continuer les efforts
+                sur le long terme, le développement musculaire étant assez long. Comptez plusieurs mois avant de réels progrés
+                ! Attention tout de même, vouloir accélérer les choses et aller trop vite ne développera vos muscles plus
+                vite, au contraire. Inutile donc de faire des exercices quotidiennement, d’autant plus que vos muscles ont
+                besoin d’une phase de récupération pour se réparer. Ne pas respecter cette phase peut s’avérer dangereux
+                et être source de blessure, alors soyez vigilants ! 3 séances par semaine est une bonne moyenne. Toujours
+                pour éviter les blessures, il est très important, voire même obligatoire, de s’échauffer avant tout exercice
+                et de s’étirer à la fin de votre programme du jour. L’échauffement est bien trop souvent négligé et ne prend
+                pourtant que quelques minutes pour être réalisée : une dizaine de minutes de cardio suffisent. Quant aux
+                étirements, ils vous permettront d’éviter les courbatures le lendemain. Lors de vos première séances, si
+                vous êtes en salle, prenez le temps de découvrir le bon fonctionnement de toutes les machines à votre disposition.
+                Des coaches sont toujours disponibles pour répondre à vos questions et vous montrer les bons gestes à adopter
+                pour bien réaliser vos exercices afin qu’ils soient efficaces. Aussi, ces exercices doivent impérativement
+                concerner chaque partie de votre corps. C’est très bien de travailler les abdominaux et les biceps mais pensez
+                aussi au dos et aux jambes qui vous évitera de donner l’impression d’avoir des cure-dents à la place des
+                jambes. Enfin, si vous pensez déjà aux compléments alimentaires, oubliez tout de suite, ils ne seront d’aucune
+                utilité sans un régime particulier. Vous pouvez attendre quelques mois avant d’essayer les compléments, seulement
+                lorsque vous aurez trouvé votre rythme et le programme adapté à vos objectifs. Mais surtout, mangez équilibré
+                !</textarea>
+        </div>
+        <div>
+            <label for="article_media" class="required">Media</label>
+            <input type="file" id="article_media" name="article[media]" required="required">
+        </div>
+        <div>
+            <button type="submit" id="article_save" name="article[save]">Edit</button>
+        </div>
+    </div>
+</form> -->
+{% endblock %}
+
+
+

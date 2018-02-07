@@ -1,0 +1,81 @@
+body,
+html {
+  height : 100%;
+  width : 100%;
+}
+a{
+  transition: all 300ms;
+  &:hover{
+    color: $primary;
+  }
+}
+
+body {
+  padding-top: 65px; // pour la nav en fixed
+  @include media('mobile') {
+    padding-top: 40px; // pour la nav en fixed
+  }
+}
+
+* {
+  box-sizing : border-box;
+}
+
+main {
+  width : 100%;
+}
+
+.right{
+  text-align: right;
+}
+.left{
+  text-align: left;
+}
+.center{
+  text-align: center;
+}
+
+.container {
+  display  : flex;
+  position : relative;
+  width    : 100%;
+
+  .content {
+    width     : 100%;
+    max-width : $maxwidth-global;
+    margin    : 0 auto;
+    padding   : 0 $gap-global;
+  }
+}
+
+.list {
+  &.list--nostyle {
+    padding    : 0;
+    list-style : none;
+  }
+  &.list--dot{
+    list-style-image: url("/src/img/point.svg");
+    .item{
+      display: list-item!important;}
+  }
+
+  &.list--inline {
+    position : relative;
+    padding  : 0;
+
+    .item {
+      display     : inline-block;
+      position    : relative;
+      margin-left : 30px;
+    }
+  }
+}
+
+@include media('mobile') {
+  .container {
+    .content {
+      padding   : 0 $gap-global-mobile;
+      max-width : none;
+    }
+  }
+}

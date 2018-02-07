@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="starter pour l'intégration HTML CSS JS (webpack)">
+
+  <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="build/bundle.css">
+
+  <title>starter-integration</title>
+</head>
+
+<body class="training-detail">
+  <!-- NAV -->
+  <nav class="main-nav container" role="navigation">
+    <div class="overlay"></div>
+    <div class="content">
+      <img src="./src/img/hamburger.svg" alt="menu" class="hamburger js-open-nav">
+      <div class="nav-left">
+        <img src="./src/img/logo-solo.svg" alt="logo">
+        <ul class="list list--inline">
+          <li class="item" role="menuitem"><a class="active" href="#">Accueil</a></li>
+          <li class="item" role="menuitem"><a href="#">Entraînements</a></li>
+          <li class="item" role="menuitem"><a href="#">Articles</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <ul class="list list--inline">
+          <li class="item" role="menuitem"><a href="#">Connexion</a></li>
+          <li class="item" role="menuitem"><a href="#">S'enregisrer</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main role="main">
+    <!-- SECTION 1 -->
+    <section class="container">
+      <div class="content">
+        <div class="article--detail">
+          <div class="article__right">
+              <h2 class="big-title"> Do You Think Motivational Thoughts </h2>
+            <ul class="list list--inline date">
+              <li class="item">Mardi 10 décembre 2017</li>
+              <li class="item">Difficulté : <img src="./src/img/muscu.svg" alt="difficulté muscle 1"> <img src="./src/img/muscu-empty.svg" alt="difficulté muscle empty"> <img src="./src/img/muscu-empty.svg" alt="difficulté muscle empty"></li>
+              <li class="item">Durée : 30min</li>
+              <li class="item">Muscle : Abdominaux</li>
+            </ul>
+            <div class="article__content">
+              <p>
+                  I hate peeping Toms. For one thing they usually step all over the hedges and plants on the side of someone’s house killing them and setting back the vegetation’s gardener countless time and effort. Another thing that I don’t really like about them is that they’re such sideline actors, lacking the abilities to participate actively, that I just can’t offer them any respect, whatsoever. Finally, I hate peeping Toms because of the very nature of their field. What is that nature? Its one of intrusiveness. And intrusive, unwelcome company is intolerable in any form. This leads me to internet advertising trends. 
+                <br>
+                <br>
+                  Now, I’m not like Robin, that weirdo from my cultural anthropology class; I think that advertising is something that has its place in our society; which for better or worse is structured along a marketplace economy. But, simply because I feel advertising has a right to exist, doesn’t mean that I like or agree with it, in its many forms and mediums. Such is the case with the recent trends in 
+              </p>
+              <img src="http://via.placeholder.com/720x520" alt="">
+              <h4 class="big-title no-underline"> Voter </h2>
+              <ul class="list list--nostyle list--inline note-vote">
+                <li class="item"><img src="./src/img/stars.svg" alt="stars "></li>
+                <li class="item"><img src="./src/img/stars.svg" alt="stars "></li>
+                <li class="item"><img src="./src/img/stars.svg" alt="stars "></li>
+                <li class="item"><img src="./src/img/stars.svg" alt="stars "></li>
+                <li class="item"><img src="./src/img/stars-empty.svg" alt="stars empty"></li>
+              </ul>
+              <button class="btn">Ajouter la vidéo dans la playlist</button>
+            </div>
+            <p class="author">Publié par Maxime Lambert, le 22 mai 2017</p>
+          </div>
+          <div class="article__left">
+            <div class="caract">
+              <h3 class="big-title">Caractéristiques</h3>
+              <div class="card__caracteristiques">
+                <img class="card__image-muscle" src="./src/img/muscle-abdo.svg" alt="abdo">
+                <ul class="list list--nostyle">
+                    <li class="item">Difficulté : <img src="./src/img/muscu.svg" alt="difficulté muscle 1"> <img src="./src/img/muscu-empty.svg" alt="difficulté muscle empty"> <img src="./src/img/muscu-empty.svg" alt="difficulté muscle empty"></li>
+                    <li class="item">Temps de pause : 1min</li>
+                    <li class="item">Durée : 30min</li>
+                    <li class="item">Muscle : Abdominaux</li>
+                    <li class="item">Matériels 
+                      <ul class="list list--dot">
+                        <li class="item">Haltères</li>
+                        <li class="item">Tapis</li>
+                      </ul>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            <div class="conseil">
+              <h3 class="big-title">Conseil du coatch</h3>
+              <p>I hate peeping Toms. For one thing they usually step all over the hedges and plants on the side of someone’s house killing them and setting back the vegetation’s gardener countless time and effort. Another thing that I don’t really like about them is that they’re such sideline actors.
+
+                  Acking the abilities to participate actively, that I just can’t offer them any respect, whatsoever. Finally, I hate peeping Toms because of the very nature of their field. What is that nature? Its one of intrusiveness. And intrusive, unwelcome company is intolerable in any form. This leads me to internet advertising trends. </p>
+            </div>
+          </div>
+        </div>
+        <div class="write-comment">
+          <h4 class="big-title">
+            Commentaires
+          </h4>
+          <form action="#">
+            <div class="field-container">
+                <label for="text">Écrire un commentaire</label>
+                <textarea name="text" id="text"> </textarea>
+            </div>
+          </form>
+        </div>
+        <div class="list-comment">
+          <div class="comment">
+            <p>
+              <span class="comment__user">Vincent Battez</span>
+              <span class="date">Mardi 10 décembre 2017</span>
+            </p>
+            <p class="comment__texte">
+                Plantronics with its GN Netcom wireless headset creates the next generation of wireless headset and other products such as wireless amplifiers, and wireless headset telephone.
+                <br>
+                <br>
+                You can get a wireless headset that is completely without wires or one that requires a belt pack. The ones that are completely wire free are made up of a headset worn on your head that talks to a base unit that is attached to your telephone with no wire connections between your headset and your phone. These wireless headset products represent the latest in sophisticated technology for communication or listening. Examples of wireless headset models are the Plantronics CS50, Plantronics CS55, the Plantronics 510S and the GN Netcom 9120.
+                <br>
+                <br>
+                Now everything you need to make your truly wireless headset a terrific piece of equipment is all combined in one package. This package is called the GN 9120. Completely wireless, this headset package gives you a range of up to 300 feet. It has a frequency of 2.4 GHz to deliver that much range. You can also purchase a lower priced GN9120 LR for a more limited but still quality wireless headset.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer container" role="contentinfo">
+    <div class="content content-footer">
+      <p class="footer-gauche">Copyright © DailyWorkout</p><p class="footer-droite"><a href=#>CGU</a><b> | </b><a href=#>FAQ</a></p>
+      </p>
+    </div>
+  </footer>
+</body>
+
+<!-- Scripts -->
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="build/bundle.js"></script>
+
+</html>

@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block bodyClass %}article-detail{% endblock %}
+
+{% block body %}
+<div class="homepage">
+    {% include 'navbar.html.twig' %} 
+    <!-- MAIN CONTENT -->
+  <main role="main">
+    <!-- SECTION 1 -->
+    <section class="container">
+      <div class="content article--detail">
+        {% if article is defined %}
+        <div class="article__right">
+          <h2 class="big-title">{{ article.title }}</h2>
+          <ul class="list list--inline date">
+            <li class="item">{{ article.createdAt|date("d/m/Y") }}</li>
+          </ul>
+          <div class="article__content">
+            <p>
+                {{ article.content }}    
+            </p>
+            <img src="{{asset("build/img/bg/img2.jpg")}}" alt="">
+          </div>
+          <p class="author">Publié par {{ article.user.name }}, le {{ article.createdAt|date("d/m/Y") }}</p>
+        </div>
+
+        {% endif %}
+        <div class="article__left">
+          <h3 class="big-title">Autres articles</h3>
+          <div class="cardsContainer">
+            <!-- TODO : FAIRE UN FOREACH  -->
+           {% if article is defined %}
+            <article class="card card--small">
+              <div class="card__container">
+                <img src="{{asset("build/img/bg/img2.jpg")}}" alt="" class="card__img">
+                <div class="card__text-container">
+                  <a href="#"><h3 class="card__title">{{ article.summary | raw }}</h3></a>
+                </div>
+              </div>
+            </article>
+            <!-- TODO : FAIRE UN FOREACH  -->
+          </div>
+        </div>        
+      </div>
+    </section>
+  </main>
+</div>
+    {% endif %}
+{% endblock %}

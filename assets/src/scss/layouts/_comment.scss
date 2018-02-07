@@ -1,0 +1,17 @@
+.write-comment{
+  .big-title{
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 25px;
+    &:before{
+      width: 100%;
+    }
+  }
+}
+.comment{
+  &__user{
+    color: $primary;
+    font-weight: bold;
+  }
+}

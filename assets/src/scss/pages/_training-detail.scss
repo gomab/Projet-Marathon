@@ -1,0 +1,38 @@
+.card__image-muscle {
+  width: 90px;
+}
+
+.note-vote {
+  display: inline-block;
+  margin-left: 30px;
+  .item {
+    display: inline-block!important;
+  }
+  .item:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+
+.article__content {
+  .big-title {
+    margin-top: 0;
+  }
+  .btn {
+    float: right;
+    margin-top: 23px;
+  }
+}
+@include media('tablet') {
+  .article__content {
+    .btn {
+      float: none;
+      margin: 0;
+      display: block;
+    }
+  }
+  .note-vote{
+
+  margin-bottom: 10px;
+  margin-top: 0;
+  }
+}

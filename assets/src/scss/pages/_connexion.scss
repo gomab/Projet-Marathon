@@ -1,0 +1,11 @@
+.connexion{
+    section{
+        height: calc( 100vh - 80px);
+    }
+    .content-connexion{ 
+        h1{
+            text-align: center;
+        } 
+        @include center-absolute('xy');
+    }
+}

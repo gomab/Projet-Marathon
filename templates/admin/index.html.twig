@@ -1,0 +1,70 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="content">
+            <div class="title m-b-md">
+                Admin DailyWorkout
+            </div>
+
+            <div class="links">
+                <a href="http://www.iut-lens.univ-artois.fr">Marathon du Web</a>
+            </div>
+
+            <h2 class="big-title"> Articles: </h2>
+            <ul>
+                {% for article in articles %}
+                    <li>
+                        {{ article.title }}
+                        {{ article.createdAt|date }}
+                    </li>
+                    <a class="btn" href="{{ path('article_edit', {'id': article.id}) }}">EDIT</a>
+                    <a class="btn" href="{{ path('article_delete', {'id': article.id}) }}">DELETE</a>
+                {% endfor %}
+            </ul>
+
+            <h2 class="big-title"> Trainings: </h2>
+            <ul>
+                {% for training in trainings %}
+                    <li>
+                        {{ training.name }}
+                        {{ training.createdAt | date }}
+                    </li>
+                    <a class="btn" href="{{ path('training_edit', {'id': training.id}) }}">EDIT</a>
+                    <a class="btn" href="{{ path('training_delete', {'id': training.id}) }}">DELETE</a>
+                {% endfor %}
+            </ul>
+
+            <h2 class="big-title"> Users: </h2>
+            <ul>
+                {% for user in users %}
+                    <li>
+                        {{ user.name }}
+                        {{ user.createdAt | date }}
+                        {{ user.admin }}
+                    </li>
+
+                    {% if user.bloquer == false %}
+                        <a href="{{ path('admin_block', {'id': user.id}) }}">BLOCK</a>
+                    {% else  %}
+                        <a href="{{ path('admin_deblock', {'id': user.id}) }}">DEBLOCK</a>
+                    {% endif %}
+
+                    <a href="{{ path('admin_delete', {'id': user.id}) }}">DELETE</a>
+                {% endfor %}
+            </ul>
+
+            <h2 class="big-title"> Comments: </h2>
+            <ul>
+                {% for comment in comments %}
+                    <li>
+                        {{ comment.content }}
+                        {{ comment.createdAt | date }}
+                    </li>
+                    <a class="btn" href="{{ path('comment_delete', {'id': comment.id}) }}">DELETE</a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

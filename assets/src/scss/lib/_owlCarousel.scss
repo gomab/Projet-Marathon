@@ -1,0 +1,64 @@
+.owl-theme-perso{
+  z-index: 10;
+  height: 100%;
+  .owl-stage-outer, .owl-stage{
+    height: 100%;
+  }
+  .owl-stage{
+    @include center-flex('xy');
+  }
+  .owl-prev, .owl-next{
+    width: 75px;
+    height: 75px;
+    @include center-absolute('y');
+  }
+  .owl-prev{
+    left: 50px;
+    background: url('#{$pathIMG}/carrou-arrow-left.svg') no-repeat center;
+  }
+  .owl-next{
+    right: 50px;
+    background: url('#{$pathIMG}/carrou-arrow-right.svg') no-repeat center;
+  }
+  .owl-stage-outer{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .title{
+    font-size: 64px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-align: center;
+  }
+  .texte{
+    font-size: 26px;
+    font-weight: lighter;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .carou-content{
+    width: 70%;
+    position: relative;
+    top: -90px;
+  }
+  @include media('mobile') {
+    .title{
+      font-size: 34px;
+    }
+    .texte{
+      font-size: 17px;
+      max-height: 170px;
+      overflow: hidden;
+    }
+    .owl-prev, .owl-next{
+      top: 90%;
+    }
+    .owl-prev{
+      left: 25%;
+    }
+    .owl-next{
+      right: 25%;
+    }
+  }
+}

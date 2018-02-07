@@ -1,0 +1,111 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Musculation : Programmes, exercices et guides pour se muscler avec ou sans matériel  {% endblock %}
+{% block description %} Retrouvez la sélection Musculation de Gentside Sport  {% endblock %}
+{% block bodyClass %}homepage{% endblock %}
+
+{% block stylesheets %}
+    <style>
+            @media screen and (max-width: 767px){
+                .nav-right .item:not(:last-child) {
+                    display: none;
+                }
+                .main-nav.open .nav-right .item {
+                    display: block;
+                }
+
+            }
+            .carou-content .texte{
+                max-height: 200px;
+                overflow: hidden;
+            }
+            .owl-theme-perso .owl-next{
+                background-image: url('{{asset("build/img/carrou-arrow-right.svg")}}');
+            }
+            .owl-theme-perso .owl-prev{
+                background-image: url('{{asset("build/img/carrou-arrow-left.svg")}}');
+            }
+            .homepage .header{
+                background-image: url('{{asset("build/img/bg/triceps.jpg")}}');
+            }
+    </style> 
+{% endblock %}
+
+
+{% block body %}
+        <!-- HEADER -->
+        <header class="header container" role="banner">
+            <div class="owl-carousel owl-theme-perso content">
+                {% for article in articles %}
+                    <div class="carou-content">
+                        <h3 class="title">{{ article.title }}</h3>
+                        <p class="texte">{{ article.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <img src="{{asset('build/img/logo-white.svg')}}" alt="logo">
+            <div class="overlay"></div>
+        </header>
+        <!-- MAIN CONTENT -->
+        <main role="main">
+            <!-- SECTION 1 -->
+        <section class="container article">
+            <div class="content">
+            <h2 class="big-title"> Articles </h2>
+                <div class="cardsContainer">
+                {% for article in articles %}
+                    <article class="card">
+                        <div class="card__container">
+                            <a href="{{ path('article_show', {'id': article.id}) }}"/> <img src="{{asset("build/img/bg/img2.jpg")}}" alt="" class="card__img"></a>
+                            <div class="card__text-container">
+                                <a href="{{ path('article_show', {'id': article.id}) }}"><h3 class="card__title">{{ article.title }}</h3></a>
+                                <p class="date">{{ article.updatedAt | date("d/m/Y") }}</p>
+                                <p class="card__text">
+                                    {{ article.content }}
+                                </p>
+                                <div class="right">
+                                    <a href="{{ path('article_index') }}" class="btn">Lire plus</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- SECTION 2 -->
+        <section class="container training">
+            <div class="content">
+                <h2 class="big-title"> Entrainement </h2>
+                <div class="cardsContainer">
+                    {% for training in trainings %}
+                    <article class="card card--training">
+                    <div class="card__container">
+                        <img src="{{asset("build/img/bg/img1.jpg")}}" alt="" class="card__img">
+                        <div class="card__text-container">
+                        <a href="{{ path('training_show', {'id': training.id}) }}"><h3 class="card__title">{{ training.name }}</h3></a>
+                        <div class="card__caracteristiques">
+                            <img class="card__image-muscle" src="{{asset('build/img/muscle-abdo.svg')}}" alt="abdo">
+                            <ul class="list list--nostyle">
+                            <li class="item">Difficulté : <img src="{{asset('build/img/muscu.svg')}}" alt="difficulté muscle 1"> <img src="{{asset('build/img/muscu-empty.svg')}}" alt="difficulté muscle empty"> <img src="{{asset('build/img/muscu-empty.svg')}}" alt="difficulté muscle empty"></li>
+                            <li class="item">Durée : 30min</li>
+                            <li class="item">Muscle : Abdominaux</li>
+                            </ul>
+                        </div>
+                        <p class="card__text">
+                            {{ training.astuce }}
+                        </p>
+                        <div class="right">
+                            <a href="{{ path('training_index') }}" class="btn">Lire plus</a>
+                        </div>
+                        </div>
+                    </div>
+                    </article>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}
